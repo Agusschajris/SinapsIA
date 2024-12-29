@@ -1,28 +1,20 @@
 # SinapsIA
-Estamos desarrollando una página web dirigida a neurólogos especializados en epilepsia para facilitar su trabajo. En ella pueden tener resgistro de sus pacientes y además tiene una IA que integrada que detecta manifestaciones de epilepsia en electroencefalogramas.
+We are developing a website aimed at neurologists specialized in epilepsy to make their work easier. On this site, they can keep records of their patients, and it also has integrated AI that detects manifestations of epilepsy in electroencephalograms.
 
 ### Integrantes y roles
-- Agustina Schajris Garati (**Inteligencia artificial** - dataset y modelo)
-- Álvaro Saravia (**Inteligencia artificial** - conexión del modelo con el back)
-- Emma Killian (**Front-End y diseño**)
+- Agustina Schajris Garati (**Artificial Intelligence** - dataset and model)
+- Alvaro Saravia (**Artificial Intelligence** - model connection with the back-end)
+- Emma Killian (**Front-End and Design**)
 - Jano Portnoi (**Back-End**)
+- Tomas "Blur" Spurio (**New Back-end**)
 
-## Inteligencia Artificial
-La IA está diseñada para analizar archivos .npy con el registro de los electroencefalogramas. No logramos usar un formato de entrada acorde a lo que reciben los médicos dado que la respuesta respecto a los formatos de la fundación que nos estuvo ayudando llegó en un momento que nos hacía imposible adaptar lo que ya teníamos hecho a un formato totalmente nuevo y desconocido para la entrega de proyecto final.
+## Artificial Intelligence
+The AI is designed to analyze .npy files containing electroencephalogram (EEG) recordings. We were unable to use an input format compatible with what the doctors receive because the response regarding the formats from the foundation that was helping us arrived at a time that made it impossible to adapt what we had already done to a completely new and unfamiliar format for the final project delivery.
 
 ### Dataset
-El dataset base utilizado es el [Guinea Bissau and Nigeria Epilepsy Dataset](https://www.kaggle.com/datasets/abhishekinnvonix/epilepsy-guinea-bissau-dataset), el cual fue procesado mayormente en el documento `procesamientoInicialDataset.ipynb`. Luego, el procesamiento continuó en el documento `X_dimensionalReduction.ipynb`, en el que PCA (análisis de componentes principales) fue aplicado y se reshapeó el dataset para el input del modelo. En el archivo `New data.ipynb` se comenzó a procesar nuevos datos provenientes del dataset [EEG data collected with Emotiv device in people with epilepsy and controls in Guinea-Bissau and Nigeria](https://zenodo.org/records/1252141) (solo la parte de Nigeria), sin embargo, a falta de tiempo, estos datos no se pudieron incluir en el dataset final. Dado el tamaño del dataset final, este no se encuentra subido a GitHub. Está guardado en una computadora del colegio (pesa 43GB).
+The base dataset used is the [Guinea Bissau and Nigeria Epilepsy Dataset](https://www.kaggle.com/datasets/abhishekinnvonix/epilepsy-guinea-bissau-dataset), which was mostly processed in the `procesamientoInicialDataset.ipynb` document. Then, the processing continued in the `X_dimensionalReduction.ipynb` document, where PCA (Principal Component Analysis) was applied, and the dataset was reshaped for the model's input. In the `New data.ipynb` file, new data from the dataset [EEG data collected with Emotiv device in people with epilepsy and controls in Guinea-Bissau and Nigeria](https://zenodo.org/records/1252141) (only the Nigeria part) began to be processed. However, due to time constraints, this data could not be included in the final dataset. Given the final dataset's size, it is not uploaded to GitHub. It is stored on a school computer and weighs 43GB.
 
-### Modelo
-El modelo es una red neuronal convolucional (CNN) de clasificación binaria. Esta hecha a partir de un modelo base ResNet-50 que además está preentrenado, y a la salida de este agrequé capas densas para que se ajustara a mis datos y devolviera un output conveniente para nuestra tarea. La salida consta de una neurona y su función de activación es la función sigmoide, la cual nos permite aproximaciones con porcentajes (mientras la salida se parece más a `0`, significa que hay menos probabilidades de tener epilepsia; si la salida se parece más a `1`, hay más probabilidades de tener epilepsia). Tensorflow fue la herramienta principal para el desarrollo de esta red neuronal. El armado del modelo y su entrenamiento y evaluación se encuentran en el archivo `MODELO FINAL.ipynb`
+### Model
+The model is a convolutional neural network (CNN) for binary classification. It is built from a pre-trained ResNet-50 base model, with additional dense layers added to tailor it to your data and produce a suitable output for your task. The output consists of a single neuron, and its activation function is the sigmoid function, which allows for percentage approximations (a value closer to `0` indicates a lower probability of having epilepsy, while a value closer to `1`indicates a higher probability of having epilepsy). TensorFlow was the primary tool used for developing this neural network. The model construction, training, and evaluation can be found in the `MODELO FINAL.ipynb` file.
 
 ![Arquitectura del modelo](https://github.com/Agusschajris/Proyecto-4to-SinapsIA/blob/main/IA/Agus/Captura%20de%20pantalla%202023-11-22%20111647.png) 
-
-### Conexión del modelo con el back
-avaro saravia 
-
-
-## Front-End y diseño
-
-
-## Back-End
